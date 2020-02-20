@@ -24,12 +24,16 @@ class MyScene extends CGFscene {
         this.diamond  = new MyDiamond (this);
         this.triangle = new MyTriangle(this);
         this.parallelogram = new MyParallelogram(this);
+        this.bigTriangle = new MyTriangleBig(this);
+        this.smallTriangle = new MyTriangleSmall(this);
 
         //Objects connected to MyInterface
         this.displayAxis     = true;
         this.displayDiamond  = true;
         this.displayTriangle = true;
         this.displayParallelogram = true;
+        this.displayTriangleSmall = true;
+        this.displayTriangleBig = true;
         
         this.scaleFactor = 1;
     }
@@ -77,6 +81,8 @@ class MyScene extends CGFscene {
         if(this.displayDiamond ) this.diamond .display();
         if(this.displayTriangle) this.triangle.display();
         if(this.displayParallelogram) this.parallelogram.display();
+        if(this.displayTriangleBig) this.bigTriangle.display();
+        if(this.displayTriangleSmall) this.smallTriangle.display();
 
         // ---- END Primitive drawing section
     }
