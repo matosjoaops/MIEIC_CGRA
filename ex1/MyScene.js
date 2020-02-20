@@ -12,7 +12,7 @@ class MyScene extends CGFscene {
         this.initLights();
 
         //Background color
-        this.gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        this.gl.clearColor(0.0, 0.0, 0.0, 1.0); //indica qual a cor a usar para limpar o ecra, nao o esta a limpar neste momento!
 
         this.gl.clearDepth(100.0);
         this.gl.enable(this.gl.DEPTH_TEST);
