@@ -78,17 +78,11 @@ class MyScene extends CGFscene {
 
         this.multMatrix(sca);
 
+        
+
         // ---- BEGIN Primitive drawing section
 
-        this.pushMatrix(); {
-            let m_trans = [ 1,  0,  0,  0,
-                            0,  1,  0,  0,
-                            0,  0,  1,  0,
-                            0,  1,  0,  1];
-            this.multMatrix(m_trans);
-            if(this.displayDiamond ) this.diamond .display();
-        } this.popMatrix();
-
+        if(this.displayDiamond ) this.diamond .display();
         if(this.displayTriangle) this.triangle.display();
         if(this.displayParallelogram) this.yellow.display();
         if(this.displayTriangleBig) this.orange.display();
