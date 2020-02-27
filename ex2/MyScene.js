@@ -45,7 +45,7 @@ class MyScene extends CGFscene {
         this.lights[0].update();
     }
     initCameras() {
-        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(0, 0, 30), vec3.fromValues(0, 0, 0));
+        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(15, 15, 15), vec3.fromValues(0, 0, 0));
     }
     setDefaultAppearance() {
         this.setAmbient(0.2, 0.4, 0.8, 1.0);
@@ -79,20 +79,24 @@ class MyScene extends CGFscene {
         
         // ---- BEGIN Primitive drawing section
 
-        if(this.displayTangram) this.tangram.display();
-        this.cube.display();
+        this.pushMatrix(); {
+            this.translate(0, -0.5, -0.5);
+            this.rotate(90*Math.PI/180, 0, 1, 0);
 
-        this.pushMatrix();
-        
-        this.translate(1,-1,0);
-        this.rotate(Math.PI,0,1,0);
-        this.yellow.display();
-        this.popMatrix();
-        
-        //this.blue.display();
-        
-        //this.orange.display();
-        
+            if(this.displayTangram) this.tangram.display();
+            this.pushMatrix(); {
+                this.translate(0, 0, -0.5)
+                this.cube.display();
+            } this.popMatrix();
+
+            this.pushMatrix();
+            
+            this.translate(1,-1,0);
+            this.rotate(Math.PI,0,1,0);
+            this.yellow.display();
+            this.popMatrix();
+
+        } this.popMatrix();
         // ---- END Primitive drawing section
     }
 }
