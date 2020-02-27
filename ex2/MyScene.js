@@ -24,6 +24,7 @@ class MyScene extends CGFscene {
         this.green  = new MyDiamond (this);
         this.purple = new MyTriangleSmall(this);
         this.red = new MyTriangleSmall(this);
+        this.pink = new MyTriangle(this);
         this.blue = new MyTriangle(this);
         this.yellow = new MyParallelogram(this);
         this.orange = new MyTriangleBig(this);
@@ -97,6 +98,11 @@ class MyScene extends CGFscene {
             this.red.display();
         } this.popMatrix();
 
+        this.pushMatrix(); {
+            this.translate(2,0,0);
+            this.pink.display();
+        } this.popMatrix();
+
         this.pushMatrix();
         
         this.translate(1,-1,0);
@@ -104,9 +110,9 @@ class MyScene extends CGFscene {
         this.yellow.display();
         this.popMatrix();
         
-        this.blue.display();
+        //this.blue.display();
         
-        this.orange.display();
+        //this.orange.display();
         
         // ---- END Primitive drawing section
     }
