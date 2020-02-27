@@ -24,11 +24,6 @@ class MyScene extends CGFscene {
 
         this.tangram = new MyTangram(this);
 
-        
-        this.blue = new MyTriangle(this);
-        this.yellow = new MyParallelogram(this);
-        this.orange = new MyTriangleBig(this);
-        this.blue = new MyTriangleBig(this);
 
         this.cube = new MyUnitCube(this);
         
@@ -82,35 +77,6 @@ class MyScene extends CGFscene {
         if(this.displayTangram) this.tangram.display();
         this.cube.display();
 
-        
-        
-        //Moving yellow
-        this.pushMatrix(); {
-        this.translate(1,-1,0);
-        this.rotate(Math.PI,0,1,0);
-        this.yellow.display();
-        } this.popMatrix();
-        
-
-        
-        //Moving orange
-        this.pushMatrix(); {
-        this.translate(-2,0,0);
-        this.rotate(135*Math.PI/180,0,0,1);
-        this.orange.display();
-        } this.popMatrix();
-        
-
-
-        
-
-        //Moving blue
-        this.pushMatrix(); {
-        this.translate(-4.83,0,0);
-        this.rotate(-135*Math.PI/180,0,0,1);
-        this.blue.display();
-        } this.popMatrix();
-        
         
         // ---- END Primitive drawing section
     }
