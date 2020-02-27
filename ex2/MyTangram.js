@@ -11,6 +11,9 @@ class MyTangram extends CGFobject {
         this.purple = new MyTriangleSmall(this.scene);
         this.red = new MyTriangleSmall(this.scene);
         this.pink = new MyTriangle(this.scene);
+        this.yellow = new MyParallelogram(this);
+        this.orange = new MyTriangleBig(this);
+        this.blue = new MyTriangleBig(this);
 	}
     display(){
         this.scene.pushMatrix(); {
@@ -36,6 +39,27 @@ class MyTangram extends CGFobject {
         this.scene.pushMatrix(); {
             this.scene.translate(2,0,0);
             this.pink.display();
+        } this.scene.popMatrix();
+
+        //Moving yellow
+        this.scene.pushMatrix(); {
+            this.scene.translate(1,-1,0);
+            this.scene.rotate(Math.PI,0,1,0);
+            this.scene.yellow.display();
+        } this.scene.popMatrix();
+        
+        //Moving orange
+        this.scene.pushMatrix(); {
+            this.scene.translate(-2,0,0);
+            this.scene.rotate(135*Math.PI/180,0,0,1);
+            this.scene.orange.display();
+        } this.scene.popMatrix();
+
+        //Moving blue
+        this.scene.pushMatrix(); {
+            this.scene.translate(-4.83,0,0);
+            this.scene.rotate(-135*Math.PI/180,0,0,1);
+            this.scene.blue.display();
         } this.scene.popMatrix();
     }
 }
