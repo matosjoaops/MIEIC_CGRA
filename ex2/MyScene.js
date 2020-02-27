@@ -30,10 +30,10 @@ class MyScene extends CGFscene {
         //Objects connected to MyInterface
         this.displayAxis     = true;
         this.displayDiamond  = true;
-        this.displayTriangle = true;
-        this.displayParallelogram = true;
-        this.displayTriangleSmall = true;
-        this.displayTriangleBig = true;
+        this.displayTriangle = false;
+        this.displayParallelogram = false;
+        this.displayTriangleSmall = false;
+        this.displayTriangleBig = false;
         
         this.scaleFactor = 1;
     }
@@ -44,7 +44,7 @@ class MyScene extends CGFscene {
         this.lights[0].update();
     }
     initCameras() {
-        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(15, 15, 15), vec3.fromValues(0, 0, 0));
+        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(0, 0, 30), vec3.fromValues(0, 0, 0));
     }
     setDefaultAppearance() {
         this.setAmbient(0.2, 0.4, 0.8, 1.0);
