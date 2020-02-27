@@ -80,11 +80,9 @@ class MyScene extends CGFscene {
 
             if(this.displayTangram) this.tangram.display();
             this.pushMatrix(); {
-                this.translate(0, 0, -0.5)
+                this.translate(0, 0, -0.5);
                 this.cube.display();
             } this.popMatrix();
-
-           
 
         } this.popMatrix();
 
