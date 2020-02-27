@@ -21,21 +21,14 @@ class MyScene extends CGFscene {
 
         //Initialize scene objects
         this.axis = new CGFaxis(this);
-        this.diamond  = new MyDiamond (this);
-        this.triangle = new MyTriangle(this);
+        this.green  = new MyDiamond (this);
+        this.blue = new MyTriangle(this);
         this.yellow = new MyParallelogram(this);
         this.orange = new MyTriangleBig(this);
         this.blue = new MyTriangleBig(this);
-        this.smallTriangle = new MyTriangleSmall(this);
-
+        
         //Objects connected to MyInterface
         this.displayAxis     = true;
-        this.displayDiamond  = true;
-        this.displayTriangle = false;
-        this.displayYellow = true;
-        this.displayTriangleSmall = false;
-        this.displayOrange = true;
-        this.displayBlue = true;
         
         this.scaleFactor = 1;
     }
@@ -88,14 +81,13 @@ class MyScene extends CGFscene {
                             0,  0,  1,  0,
                             0,  1,  0,  1];
             this.multMatrix(m_trans);
-            if(this.displayDiamond ) this.diamond .display();
+            this.green .display();
         } this.popMatrix();
         
-        if(this.displayTriangle) this.triangle.display();
-        if(this.displayYellow) this.yellow.display();
-        if(this.displayOrange) this.orange.display();
-        if(this.displayTriangleSmall) this.smallTriangle.display();
-
+        this.blue.display();
+        this.yellow.display();
+        this.orange.display();
+        
         // ---- END Primitive drawing section
     }
 }
