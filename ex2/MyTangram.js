@@ -39,35 +39,3 @@ class MyTangram extends CGFobject {
         } this.scene.popMatrix();
     }
 }
-/*
-this.green  = new MyDiamond (this);
-this.purple = new MyTriangleSmall(this);
-this.red = new MyTriangleSmall(this);
-this.pink = new MyTriangle(this);
-}
-display(){
-this.pushMatrix(); {
-    let m_trans = [ 1,  0,  0,  0,
-                    0,  1,  0,  0,
-                    0,  0,  1,  0,
-                    0,  1,  0,  1];
-    this.multMatrix(m_trans);
-    this.green .display();
-} this.popMatrix();
-
-this.pushMatrix(); {
-    this.translate(-1,0,0);
-    this.purple.display();
-} this.popMatrix();
-
-this.pushMatrix(); {
-    this.translate(1,0,0);
-    this.rotate(+90.0*Math.PI/180, 0, 0, 1);
-    this.red.display();
-} this.popMatrix();
-
-this.pushMatrix(); {
-    this.translate(2,0,0);
-    this.pink.display();
-} this.popMatrix();
-*/
