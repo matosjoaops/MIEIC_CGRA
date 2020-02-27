@@ -21,10 +21,10 @@ class MyScene extends CGFscene {
 
         //Initialize scene objects
         this.axis = new CGFaxis(this);
-        this.green  = new MyDiamond (this);
-        this.purple = new MyTriangleSmall(this);
-        this.red = new MyTriangleSmall(this);
-        this.pink = new MyTriangle(this);
+
+        this.tangram = new MyTangram(this);
+
+        
         this.blue = new MyTriangle(this);
         this.yellow = new MyParallelogram(this);
         this.orange = new MyTriangleBig(this);
@@ -73,35 +73,10 @@ class MyScene extends CGFscene {
                     0.0, 0.0, 0.0, 1.0];
 
         this.multMatrix(sca);
-
         
-
         // ---- BEGIN Primitive drawing section
 
-        this.pushMatrix(); {
-            let m_trans = [ 1,  0,  0,  0,
-                            0,  1,  0,  0,
-                            0,  0,  1,  0,
-                            0,  1,  0,  1];
-            this.multMatrix(m_trans);
-            this.green .display();
-        } this.popMatrix();
-
-        this.pushMatrix(); {
-            this.translate(-1,0,0);
-            this.purple.display();
-        } this.popMatrix();
-        
-        this.pushMatrix(); {
-            this.translate(1,0,0);
-            this.rotate(+90.0*Math.PI/180, 0, 0, 1);
-            this.red.display();
-        } this.popMatrix();
-
-        this.pushMatrix(); {
-            this.translate(2,0,0);
-            this.pink.display();
-        } this.popMatrix();
+        this.tangram.display();
 
         this.pushMatrix();
         
