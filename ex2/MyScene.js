@@ -92,8 +92,8 @@ class MyScene extends CGFscene {
         } this.popMatrix();
         
         if(this.displayTriangle) this.triangle.display();
-        if(this.displayParallelogram) this.yellow.display();
-        if(this.displayTriangleBig) this.orange.display();
+        if(this.displayYellow) this.yellow.display();
+        if(this.displayOrange) this.orange.display();
         if(this.displayTriangleSmall) this.smallTriangle.display();
 
         // ---- END Primitive drawing section
