@@ -97,16 +97,27 @@ class MyScene extends CGFscene {
             this.red.display();
         } this.popMatrix();
 
-        this.pushMatrix();
         
+        
+        //Moving yellow
+        this.pushMatrix(); {
         this.translate(1,-1,0);
         this.rotate(Math.PI,0,1,0);
         this.yellow.display();
-        this.popMatrix();
+        } this.popMatrix();
         
+
+        //Moving blue
+        this.pushMatrix(); {
+        this.rotate(135*Math.PI/180,0,0,1);
         this.blue.display();
+        } this.popMatrix();
         
+
+        //Moving orange
+        this.pushMatrix(); {
         this.orange.display();
+        } this.popMatrix();
         
         // ---- END Primitive drawing section
     }
