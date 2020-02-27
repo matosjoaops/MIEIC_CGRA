@@ -29,9 +29,12 @@ class MyScene extends CGFscene {
         this.yellow = new MyParallelogram(this);
         this.orange = new MyTriangleBig(this);
         this.blue = new MyTriangleBig(this);
+
+        this.cube = new MyUnitCube(this);
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
+        this.displayTangram  = false;
         
         this.scaleFactor = 1;
     }
@@ -76,7 +79,8 @@ class MyScene extends CGFscene {
         
         // ---- BEGIN Primitive drawing section
 
-        this.tangram.display();
+        if(this.displayTangram) this.tangram.display();
+        this.cube.display();
 
         this.pushMatrix();
         
