@@ -29,7 +29,7 @@ class MyScene extends CGFscene {
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
-        this.displayTangram  = false;
+        this.displayTangram  = true;
         
         this.scaleFactor = 1;
     }
@@ -75,8 +75,8 @@ class MyScene extends CGFscene {
         // ---- BEGIN Primitive drawing section
 
         this.pushMatrix(); {
-            this.translate(0, -0.5, -0.5);
-            this.rotate(90*Math.PI/180, 0, 1, 0);
+            this.translate(0.5, 0, 0.5);
+            this.rotate(-90*Math.PI/180, 1, 0, 0);
 
             if(this.displayTangram) this.tangram.display();
             this.pushMatrix(); {
