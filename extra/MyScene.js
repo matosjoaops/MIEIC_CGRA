@@ -22,10 +22,7 @@ class MyScene extends CGFscene {
         //Initialize scene objects
         this.axis = new CGFaxis(this);
 
-        this.tangram = new MyTangram(this);
-
-
-        this.cube = new MyUnitCubeQuad(this);
+        this.table = new Table(this);
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
@@ -41,7 +38,7 @@ class MyScene extends CGFscene {
         this.lights[0].update();
     }
     initCameras() {
-        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(15, 15, 15), vec3.fromValues(0, 0, 0));
+        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(3, 3, 3), vec3.fromValues(0, 0, 0));
     }
     setDefaultAppearance() {
         this.setAmbient(0.2, 0.4, 0.8, 1.0);
@@ -75,17 +72,7 @@ class MyScene extends CGFscene {
         
         // ---- BEGIN Primitive drawing section
 
-        this.pushMatrix(); {
-            this.translate(0.5, 0, 0.5);
-            this.rotate(-90*Math.PI/180, 1, 0, 0);
-
-            if(this.displayTangram) this.tangram.display();
-            this.pushMatrix(); {
-                this.translate(0, 0, -0.5);
-                if (this.displayCube) this.cube.display();
-            } this.popMatrix();
-
-        } this.popMatrix();
+        this.table.display();
 
         // ---- END Primitive drawing section
     }
