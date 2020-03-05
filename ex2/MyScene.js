@@ -25,7 +25,7 @@ class MyScene extends CGFscene {
         this.tangram = new MyTangram(this);
 
 
-        this.cube = new MyUnitCube(this);
+        this.cube = new MyUnitCubeQuad(this);
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
