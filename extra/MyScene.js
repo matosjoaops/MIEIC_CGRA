@@ -26,11 +26,13 @@ class MyScene extends CGFscene {
 
 
         this.cube = new MyUnitCubeQuad(this);
+        this.chair = new MyChair(this);
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
-        this.displayTangram  = true;
-        this.displayCube     = true;
+        this.displayTangram  = false;
+        this.displayCube     = false;
+        this.displayChair    = true;
         
         this.scaleFactor = 1;
     }
@@ -87,6 +89,7 @@ class MyScene extends CGFscene {
 
         } this.popMatrix();
 
+        if (this.displayChair) this.chair.display();
         // ---- END Primitive drawing section
     }
 }

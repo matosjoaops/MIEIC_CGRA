@@ -20,7 +20,7 @@ class MyInterface extends CGFinterface {
         this.gui.add(this.scene, 'displayAxis').name('Display Axis');
         this.gui.add(this.scene, 'displayTangram').name('Display Tangram');
         this.gui.add(this.scene, 'displayCube').name('Display Cube');
-        this.gui.add(this.scene, 'displayChair').name('Display Chair');
+        
         
         //Slider element in GUI
         this.gui.add(this.scene, 'scaleFactor', 0.1, 5).name('Scale Factor');
