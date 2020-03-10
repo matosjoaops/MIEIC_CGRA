@@ -13,6 +13,7 @@ class MyChair extends MyUnitCubeQuad {
     }
     display(){
         this.scene.translate(0,0.15,0);
+        this.scene.scale(0.3,0.3,0.3);
         {
             //back
             this.scene.pushMatrix();
