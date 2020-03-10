@@ -6,33 +6,32 @@
 class Classroom extends CGFobject {
 	constructor(scene) {
         super(scene);
+        this.scene = scene;
 
-        this.tables = [
-
-        ];
+        this.table = new Table(this.scene);
+        this.chair = new MyChair(this.scene);
 	}
 	display(){
         this.scene.pushMatrix();{
-            this.scene.translate(0, 0.5, 0);
-            this.top.display();
+            this.scene.translate(0.6, 0, 1);
+            this.scene.rotate(90*Math.PI/180, 0, 1, 0);
+            this.table.display();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(0.4, 0, 0.2);
-            this.leg[0].display();
+            this.scene.translate(0.6, 0, 2.02);
+            this.scene.rotate(90*Math.PI/180, 0, 1, 0);
+            this.table.display();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(-0.4, 0, 0.2);
-            this.leg[1].display();
+            this.scene.translate(1.12, 0, 1);
+            this.scene.rotate(90*Math.PI/180, 0, 1, 0);
+            this.table.display();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(0.4, 0, -0.2);
-            this.leg[2].display();
+            this.scene.translate(1.12, 0, 2.02);
+            this.scene.rotate(90*Math.PI/180, 0, 1, 0);
+            this.table.display();
         } this.scene.popMatrix();
-        this.scene.pushMatrix();{
-            this.scene.translate(-0.4, 0, -0.2);
-            this.leg[3].display();
-        } this.scene.popMatrix();
-
     }
 }
 

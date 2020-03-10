@@ -22,14 +22,13 @@ class MyScene extends CGFscene {
         //Initialize scene objects
         this.axis = new CGFaxis(this);
 
-        this.table = new Table(this);
-        this.chair = new MyChair(this);
+        this.classroom = new Classroom(this);
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
         this.displayTangram  = false;
         this.displayCube     = false;
-        this.displayChair    = true;
+        this.displayChair    = false;
         
         this.scaleFactor = 1;
     }
@@ -40,7 +39,7 @@ class MyScene extends CGFscene {
         this.lights[0].update();
     }
     initCameras() {
-        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(3, 3, 3), vec3.fromValues(0, 0, 0));
+        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(6, 4, 4), vec3.fromValues(0, 0, 0));
     }
     setDefaultAppearance() {
         this.setAmbient(0.2, 0.4, 0.8, 1.0);
@@ -74,9 +73,7 @@ class MyScene extends CGFscene {
         
         // ---- BEGIN Primitive drawing section
 
-        this.table.display();
-
-        if (this.displayChair) this.chair.display();
+        this.classroom.display();
         // ---- END Primitive drawing section
     }
 }
