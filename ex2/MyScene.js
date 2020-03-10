@@ -29,8 +29,8 @@ class MyScene extends CGFscene {
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
-        this.displayTangram  = true;
-        this.displayCube     = true;
+        this.displayTangram  = false;
+        this.displayCube     = false;
         
         this.scaleFactor = 1;
     }
@@ -87,6 +87,7 @@ class MyScene extends CGFscene {
 
         } this.popMatrix();
 
+        
         // ---- END Primitive drawing section
     }
 }

@@ -23,11 +23,13 @@ class MyScene extends CGFscene {
         this.axis = new CGFaxis(this);
 
         this.table = new Table(this);
+        this.chair = new MyChair(this);
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
-        this.displayTangram  = true;
-        this.displayCube     = true;
+        this.displayTangram  = false;
+        this.displayCube     = false;
+        this.displayChair    = true;
         
         this.scaleFactor = 1;
     }
@@ -74,6 +76,7 @@ class MyScene extends CGFscene {
 
         this.table.display();
 
+        if (this.displayChair) this.chair.display();
         // ---- END Primitive drawing section
     }
 }
