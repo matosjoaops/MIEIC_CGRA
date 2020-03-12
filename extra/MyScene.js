@@ -28,8 +28,6 @@ class MyScene extends CGFscene {
         
         //Objects connected to MyInterface
         this.displayAxis     = true;
-        this.displayTangram  = false;
-        this.displayCube     = false;
         
         this.scaleFactor = 1;
     }
@@ -40,7 +38,7 @@ class MyScene extends CGFscene {
         this.lights[0].update();
     }
     initCameras() {
-        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(6, 4, 6), vec3.fromValues(0, 0, 0));
+        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(8, 5, 10), vec3.fromValues(1.5, 0, 2.5));
         //this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(1, 0.2, 0), vec3.fromValues(0, 0.2, 0));
     }
     setDefaultAppearance() {
