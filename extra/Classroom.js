@@ -10,23 +10,52 @@ class Island1 extends CGFobject {
 
         this.table = new Table(this.scene);
         this.chair = new MyChair(this.scene);
+        this.computer = new Computer(this.scene);
 	}
 	display(){
         this.scene.pushMatrix();{
-            this.scene.translate(0.51, 0, 0.26);
-            this.table.display();
+            this.scene.pushMatrix();{
+                this.scene.translate(0.51, 0, 0.26);
+                this.table.display();
+                this.scene.pushMatrix();{
+                    this.scene.translate(-0.16, 0.507, -0.15);
+                    this.scene.rotate(10*Math.PI/180, 0, 1, 0);
+                    this.computer.display();
+                } this.scene.popMatrix();
+            } this.scene.popMatrix();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(0.51, 0, -0.26);
-            this.table.display();
+            this.scene.pushMatrix();{
+                this.scene.translate(0.51, 0, -0.26);
+                this.table.display();
+                this.scene.pushMatrix();{
+                    this.scene.translate(-0.16, 0.507, 0.15);
+                    this.scene.rotate(170*Math.PI/180, 0, 1, 0);
+                    this.computer.display();
+                } this.scene.popMatrix();
+            } this.scene.popMatrix();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(-0.51, 0, 0.26);
-            this.table.display();
+            this.scene.pushMatrix();{
+                this.scene.translate(-0.51, 0, -0.26);
+                this.table.display();
+                this.scene.pushMatrix();{
+                    this.scene.translate(0.16, 0.507, 0.15);
+                    this.scene.rotate(-170*Math.PI/180, 0, 1, 0);
+                    this.computer.display();
+                } this.scene.popMatrix();
+            } this.scene.popMatrix();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(-0.51, 0, -0.26);
-            this.table.display();
+            this.scene.pushMatrix();{
+                this.scene.translate(-0.51, 0, 0.26);
+                this.table.display();
+                this.scene.pushMatrix();{
+                    this.scene.translate(0.16, 0.507, -0.15);
+                    this.scene.rotate(-10*Math.PI/180, 0, 1, 0);
+                    this.computer.display();
+                } this.scene.popMatrix();
+            } this.scene.popMatrix();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
             this.scene.translate(0.5,-0.1,-0.6);
@@ -61,21 +90,37 @@ class Island2 extends CGFobject {
 
         this.table = new Table(this.scene);
         this.chair = new MyChair(this.scene);
+        this.computer = new Computer(this.scene);
 	}
 	display(){
         this.scene.pushMatrix();{
-            this.scene.translate(0.51, 0, 0.26);
-            this.table.display();
+            this.scene.pushMatrix();{
+                this.scene.translate(0.51, 0, 0.26);
+                this.table.display();
+                this.scene.pushMatrix();{
+                    this.scene.translate(0, 0.507, -0.15);
+                    this.computer.display();
+                } this.scene.popMatrix();
+            } this.scene.popMatrix();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
-            this.scene.translate(0.51, 0, -0.26);
-            this.table.display();
+            this.scene.pushMatrix();{
+                this.scene.translate(0.51, 0, -0.26);
+                this.table.display();
+                this.scene.pushMatrix();{
+                    this.scene.translate(0, 0.507, +0.15);
+                    this.scene.rotate(180*Math.PI/180, 0, 1, 0);
+                    this.computer.display();
+                } this.scene.popMatrix();
+            } this.scene.popMatrix();
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
             this.scene.translate(-0.26, 0, 0);
             this.scene.rotate(90*Math.PI/180, 0, 1, 0);
             this.table.display();
         } this.scene.popMatrix();
+
+
         this.scene.pushMatrix();{
             this.scene.translate(0.5,-0.1,-0.6);
             this.chair.display();
@@ -119,6 +164,11 @@ class Classroom extends CGFobject {
         } this.scene.popMatrix();
         this.scene.pushMatrix();{
             this.scene.translate(1, 0, 4.5);
+            this.scene.rotate(90*Math.PI/180, 0, 1, 0);
+            this.island2.display();
+        } this.scene.popMatrix();
+        this.scene.pushMatrix();{
+            this.scene.translate(3, 0, 4.5);
             this.scene.rotate(90*Math.PI/180, 0, 1, 0);
             this.island2.display();
         } this.scene.popMatrix();

@@ -40,7 +40,8 @@ class MyScene extends CGFscene {
         this.lights[0].update();
     }
     initCameras() {
-        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(12, 8, 8), vec3.fromValues(0, 0, 0));
+        this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(6, 4, 6), vec3.fromValues(0, 0, 0));
+        //this.camera = new CGFcamera(0.4, 0.1, 500, vec3.fromValues(1, 0.2, 0), vec3.fromValues(0, 0.2, 0));
     }
     setDefaultAppearance() {
         this.setAmbient(0.2, 0.4, 0.8, 1.0);
@@ -73,7 +74,6 @@ class MyScene extends CGFscene {
         this.multMatrix(sca);
         
         // ---- BEGIN Primitive drawing section
-
 
         this.classroom.display();
 

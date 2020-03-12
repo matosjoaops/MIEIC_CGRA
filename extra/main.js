@@ -18,6 +18,7 @@ serialInclude(
         'MyTriangleBig.js',
         'MyTriangleSmall.js',
         'MyChair.js',
+        'Computer.js',
         'Table.js',
         'Classroom.js',
 
