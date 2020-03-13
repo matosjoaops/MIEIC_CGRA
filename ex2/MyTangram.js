@@ -30,9 +30,9 @@ class MyTangram extends CGFobject {
         const k = 2;
 
         this.materials.green = new CGFappearance(this.scene);
-        this.materials.green.setAmbient(0/k, 1/k, 0/k, 1);
-        this.materials.green.setDiffuse(0/k, 1/k, 0/k, 1);
-        this.materials.green.setSpecular(0, 1, 0, 1);
+        this.materials.green.setAmbient(...this.scene.hexToRgbA(this.scene.customMaterialValues['Ambient']));
+        this.materials.green.setDiffuse(...this.scene.hexToRgbA(this.scene.customMaterialValues['Diffuse']));
+        this.materials.green.setSpecular(...this.scene.hexToRgbA(this.scene.customMaterialValues['Specular']));
         
         this.materials.purple = new CGFappearance(this.scene);
         this.materials.purple.setAmbient(0.5/k, 0/k, 0.5/k, 1);
@@ -123,5 +123,12 @@ class MyTangram extends CGFobject {
         } this.scene.popMatrix();
 
         this.materials.default.apply();
+    }
+    updateGreen()
+    {
+        this.materials.green.setAmbient(...this.scene.hexToRgbA(this.scene.customMaterialValues['Ambient']));
+        this.materials.green.setDiffuse(...this.scene.hexToRgbA(this.scene.customMaterialValues['Diffuse']));
+        this.materials.green.setSpecular(...this.scene.hexToRgbA(this.scene.customMaterialValues['Specular']));
+        this.materials.green.setShininess(this.scene.customMaterialValues['Shininess']);
     }
 }

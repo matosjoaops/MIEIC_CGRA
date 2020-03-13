@@ -52,10 +52,10 @@ class MyInterface extends CGFinterface {
         // Anothe forlder for grouping the custom material's parameters
         var f2 = this.gui.addFolder('Custom Material');
         
-        f2.addColor(this.scene.customMaterialValues,'Ambient').onChange(this.scene.updateCustomMaterial.bind(this.scene));
-        f2.addColor(this.scene.customMaterialValues,'Diffuse').onChange(this.scene.updateCustomMaterial.bind(this.scene));
-        f2.addColor(this.scene.customMaterialValues,'Specular').onChange(this.scene.updateCustomMaterial.bind(this.scene));
-        f2.add(this.scene.customMaterialValues,'Shininess', 0, 100).onChange(this.scene.updateCustomMaterial.bind(this.scene));
+        f2.addColor(this.scene.customMaterialValues,'Ambient').onChange(this.scene.updateCustomMaterials.bind(this.scene));
+        f2.addColor(this.scene.customMaterialValues,'Diffuse').onChange(this.scene.updateCustomMaterials.bind(this.scene));
+        f2.addColor(this.scene.customMaterialValues,'Specular').onChange(this.scene.updateCustomMaterials.bind(this.scene));
+        f2.add(this.scene.customMaterialValues,'Shininess', 0, 100).onChange(this.scene.updateCustomMaterials.bind(this.scene));
 
         return true;
     }

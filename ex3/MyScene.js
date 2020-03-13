@@ -94,8 +94,14 @@ class MyScene extends CGFscene {
         this.customMaterial.setSpecular(...this.hexToRgbA(this.customMaterialValues['Specular']));
 
         this.customMaterial.setShininess(this.customMaterialValues['Shininess']);
-
     };
+
+    updateCustomMaterials()
+    {
+        this.updateCustomMaterial;
+        //Update Green Diamond in Tangram
+        this.tangram.updateGreen();
+    }
 
     updateObjectComplexity(){
         if(0 <= this.selectedObject && this.selectedObject < 3)
