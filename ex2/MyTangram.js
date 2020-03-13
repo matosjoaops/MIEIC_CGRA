@@ -7,14 +7,24 @@ class MyTangram extends CGFobject {
 	constructor(scene) {
         super(scene);
         this.scene = scene;
-        this.green  = new MyDiamond (this.scene);
-        this.purple = new MyTriangleSmall(this.scene);
-        this.red = new MyTriangleSmall(this.scene);
-        this.pink = new MyTriangle(this.scene);
-        this.yellow = new MyParallelogram(this.scene);
-        this.orange = new MyTriangleBig(this.scene);
-        this.blue = new MyTriangleBig(this.scene);
+        this.child = {
+            green : new MyDiamond (this.scene),
+            purple: new MyTriangleSmall(this.scene),
+            red   : new MyTriangleSmall(this.scene),
+            pink  : new MyTriangle(this.scene),
+            yellow: new MyParallelogram(this.scene),
+            orange: new MyTriangleBig(this.scene),
+            blue  : new MyTriangleBig(this.scene)
+        }
         this.initMaterials();
+    }
+    enableNormalViz(){
+        for(let k of Object.keys(this.child))
+            this.child[k].enableNormalViz();
+    }
+    disableNormalViz(){
+        for(let k of Object.keys(this.child))
+            this.child[k].disableNormalViz();
     }
     initMaterials(){
 
@@ -73,14 +83,14 @@ class MyTangram extends CGFobject {
                             0,  1,  0,  1];
             this.scene.multMatrix(m_trans);
             this.materials.green.apply();
-            this.green .display();
+            this.child.green .display();
         } this.scene.popMatrix();
         
         //Moving purple
         this.scene.pushMatrix(); {
             this.scene.translate(-1,0,0);
             this.materials.purple.apply();
-            this.purple.display();
+            this.child.purple.display();
         } this.scene.popMatrix();
         
         //Moving red
@@ -88,14 +98,14 @@ class MyTangram extends CGFobject {
             this.scene.translate(1,0,0);
             this.scene.rotate(+90.0*Math.PI/180, 0, 0, 1);
             this.materials.red.apply();
-            this.red.display();
+            this.child.red.display();
         } this.scene.popMatrix();
         
         //Moving pink
         this.scene.pushMatrix(); {
             this.scene.translate(2,0,0);
             this.materials.pink.apply();
-            this.pink.display();
+            this.child.pink.display();
         } this.scene.popMatrix();
 
         //Moving yellow
@@ -103,7 +113,7 @@ class MyTangram extends CGFobject {
             this.scene.translate(1,-1,0);
             this.scene.rotate(Math.PI,0,1,0);
             this.materials.yellow.apply();
-            this.yellow.display();
+            this.child.yellow.display();
         } this.scene.popMatrix();
         
         //Moving orange
@@ -111,7 +121,7 @@ class MyTangram extends CGFobject {
             this.scene.translate(-2,0,0);
             this.scene.rotate(135*Math.PI/180,0,0,1);
             this.materials.orange.apply();
-            this.orange.display();
+            this.child.orange.display();
         } this.scene.popMatrix();
 
         //Moving blue
@@ -119,7 +129,7 @@ class MyTangram extends CGFobject {
             this.scene.translate(-4.83,0,0);
             this.scene.rotate(-135*Math.PI/180,0,0,1);
             this.materials.blue.apply();
-            this.blue.display();
+            this.child.blue.display();
         } this.scene.popMatrix();
 
         this.materials.default.apply();
