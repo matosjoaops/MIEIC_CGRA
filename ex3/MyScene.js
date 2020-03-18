@@ -98,7 +98,9 @@ class MyScene extends CGFscene {
 
     updateCustomMaterials()
     {
-        this.updateCustomMaterial();
+        this.updateCustomMaterial;
+        //Update Green Diamond in Tangram
+        this.tangram.updateGreen();
     }
 
     updateObjectComplexity(){

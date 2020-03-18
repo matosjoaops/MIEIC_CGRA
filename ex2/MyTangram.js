@@ -31,18 +31,19 @@ class MyTangram extends CGFobject {
         this.materials = {};
         
         this.materials.default = new CGFappearance(this.scene);
-        this.materials.default.setAmbient(...this.scene.hexToRgbA(this.scene.customMaterialValues['Ambient']));
-        this.materials.default.setDiffuse(...this.scene.hexToRgbA(this.scene.customMaterialValues['Diffuse']));
-        this.materials.default.setSpecular(...this.scene.hexToRgbA(this.scene.customMaterialValues['Specular']));
-        this.materials.default.setShininess(this.scene.customMaterialValues['Shininess']);
-        this.materials.default.setEmission(this.scene.customMaterialValues['Emission']);
+        this.materials.default.setAmbient(this.scene.ambient);
+        this.materials.default.setDiffuse(this.scene.diffuse);
+        this.materials.default.setSpecular(this.scene.specular);
+        this.materials.default.setShininess(this.scene.shininess);
+        this.materials.default.setEmission(this.scene.emission);
 
         const k = 2;
 
         this.materials.green = new CGFappearance(this.scene);
-        this.materials.green.setAmbient(0/k, 1/k, 0/k);
-        this.materials.green.setDiffuse(0/k, 1/k, 0/k);
-        this.materials.green.setSpecular(0, 1, 0);
+        this.materials.green.setAmbient(...this.scene.hexToRgbA(this.scene.customMaterialValues['Ambient']));
+        this.materials.green.setDiffuse(...this.scene.hexToRgbA(this.scene.customMaterialValues['Diffuse']));
+        this.materials.green.setSpecular(...this.scene.hexToRgbA(this.scene.customMaterialValues['Specular']));
+        this.materials.green.setShininess(this.scene.customMaterialValues['Shininess']);
 
         this.materials.purple = new CGFappearance(this.scene);
         this.materials.purple.setAmbient(0.5/k, 0/k, 0.5/k, 1);
@@ -133,5 +134,12 @@ class MyTangram extends CGFobject {
         } this.scene.popMatrix();
 
         this.materials.default.apply();
+    }
+    updateGreen()
+    {
+        this.materials.green.setAmbient(...this.scene.hexToRgbA(this.scene.customMaterialValues['Ambient']));
+        this.materials.green.setDiffuse(...this.scene.hexToRgbA(this.scene.customMaterialValues['Diffuse']));
+        this.materials.green.setSpecular(...this.scene.hexToRgbA(this.scene.customMaterialValues['Specular']));
+        this.materials.green.setShininess(this.scene.customMaterialValues['Shininess']);
     }
 }
