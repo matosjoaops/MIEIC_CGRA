@@ -134,11 +134,4 @@ class MyTangram extends CGFobject {
 
         this.materials.default.apply();
     }
-    updateGreen()
-    {
-        this.materials.green.setAmbient(...this.scene.hexToRgbA(this.scene.customMaterialValues['Ambient']));
-        this.materials.green.setDiffuse(...this.scene.hexToRgbA(this.scene.customMaterialValues['Diffuse']));
-        this.materials.green.setSpecular(...this.scene.hexToRgbA(this.scene.customMaterialValues['Specular']));
-        this.materials.green.setShininess(this.scene.customMaterialValues['Shininess']);
-    }
 }
