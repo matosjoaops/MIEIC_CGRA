@@ -154,7 +154,7 @@ class MyScene extends CGFscene {
 
         this.updateCustomMaterial();
 
-        this.materials = [this.material1, this.material2, this.material3,this.wood, this.customMaterial];
+        this.materials = [this.material1, this.material2, this.material3, this.wood, this.customMaterial];
 
         // Labels and ID's for object selection on MyInterface
         this.materialIDs = {'Red Ambient': 0, 'Red Diffuse': 1, 'Red Specular': 2,'Wood': 3, 'Custom': 4 };
