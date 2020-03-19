@@ -35,13 +35,6 @@ class MyScene extends CGFscene {
         this.quadMaterial.loadTexture('images/default.png');
         this.quadMaterial.setTextureWrap('REPEAT', 'REPEAT');
 
-        this.tangramMaterial = new CGFappearance(this);
-        this.quadMaterial.setAmbient(0.1, 0.1, 0.1, 1);
-        this.quadMaterial.setDiffuse(0.9, 0.9, 0.9, 1);
-        this.quadMaterial.setSpecular(0.1, 0.1, 0.1, 1);
-        this.quadMaterial.setShininess(10.0);
-        this.quadMaterial.loadTexture('images/tangram-lines.png');
-        this.quadMaterial.setTextureWrap('REPEAT', 'REPEAT');
         //------
 
         //------ Textures
@@ -135,7 +128,6 @@ class MyScene extends CGFscene {
             this.quad.display();
         }
 
-        this.tangramMaterial.apply();
         this.tangram.display();
         
         // ---- END Primitive drawing section
