@@ -28,9 +28,7 @@ class MyTangram extends CGFobject {
     }
     initMaterials(){
 
-        this.materials = {};
-        
-        this.materials.default = new CGFappearance(this.scene);
+        this.material = new CGFappearance(this.scene);
         this.materials.default.setAmbient(this.scene.ambient);
         this.materials.default.setDiffuse(this.scene.diffuse);
         this.materials.default.setSpecular(this.scene.specular);
