@@ -16,6 +16,25 @@ class MyTangram extends CGFobject {
             orange: new MyTriangleBig(this.scene),
             blue  : new MyTriangleBig(this.scene)
         }
+        this.child.orange.texCoords = [
+            1, 1,
+            1, 1,
+            0.5, 0.5,
+            0.5, 0.5,
+            1, 0,
+            1, 0
+        ];
+        this.child.orange.initGLBuffers();
+        this.child.red.texCoords = [
+            0.25, 0.75,
+            0.25, 0.75,
+            0.5, 0.5,
+            0.5, 0.5,
+            0.75, 0.75,
+            0.75, 0.75
+        ];
+        this.child.red.initGLBuffers();
+
         this.initMaterials();
     }
     enableNormalViz(){
