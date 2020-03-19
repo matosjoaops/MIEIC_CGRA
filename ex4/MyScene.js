@@ -24,6 +24,7 @@ class MyScene extends CGFscene {
         //Initialize scene objects
         this.axis = new CGFaxis(this);
         this.quad = new MyQuad(this);
+        this.cube = new MyUnitCubeQuad(this);
 
         //------ Applied Material
         this.quadMaterial = new CGFappearance(this);
@@ -126,5 +127,6 @@ class MyScene extends CGFscene {
             this.quad.display();
         }
         // ---- END Primitive drawing section
+        this.cube.display();
     }
 }
