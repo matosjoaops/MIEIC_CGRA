@@ -58,7 +58,7 @@ class MyUnitCubeQuad extends CGFobject {
             this.scene.translate(0,-0.5,0);
             this.scene.rotate(+90.0*Math.PI/180, 1, 0, 0);
             this.materials.bottom.apply();
-            this.scene.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
+            this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
             this.Bot.display();
         } this.scene.popMatrix();
         //Lef
@@ -71,7 +71,7 @@ class MyUnitCubeQuad extends CGFobject {
         //Rig
         this.scene.pushMatrix(); {
             this.scene.translate(0,0,-0.5);
-            this.scene.rotate(+180.0*Math.PI/180, 1, 0, 0);
+            this.scene.rotate(+180.0*Math.PI/180, 0, 1, 0);
             this.materials.side.apply();
             this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
             this.Rig.display();
@@ -90,7 +90,7 @@ class MyUnitCubeQuad extends CGFobject {
             this.scene.rotate(-90.0*Math.PI/180, 0, 1, 0);
             this.materials.side.apply();
             this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
-            this.Fro.display();
+            this.Bac.display();
         } this.scene.popMatrix();  
     }
 }
