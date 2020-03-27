@@ -184,6 +184,9 @@ class ShaderScene extends CGFscene {
 		// Actually not
 		if (this.selectedExampleShader == 9)
 			this.testShaders[9].setUniformsValues({ timeFactor: t / 100 % 1000 });
+		// Water
+		if (this.selectedExampleShader == 11)
+			this.testShaders[11].setUniformsValues({ timeFactor: t / 100 % 1000 });
 	}
 
 	// main display function
