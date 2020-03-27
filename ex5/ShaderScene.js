@@ -55,11 +55,10 @@ class ShaderScene extends CGFscene {
 		this.texture = new CGFtexture(this, "textures/waterTex.jpg");
 		this.appearance.setTexture(this.texture);
 		this.appearance.setTextureWrap('REPEAT', 'REPEAT');
-
+		
 		//this.texture2 = new CGFtexture(this, "textures/FEUP.jpg");
 		this.texture2 = new CGFtexture(this, "textures/waterMap.jpg");
 		
-
 		// shaders initialization
 
 		this.testShaders = [
