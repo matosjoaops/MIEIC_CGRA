@@ -19,15 +19,9 @@ void main() {
 
 	float height_increase = color.r;
 
-	vec2 deltaXY = aTextureCoord + sin(timeFactor * vec2(0.07,0.07)) + 1.0;
-	deltaXY.x = 0.0;
-	deltaXY.y = 0.0; 
+	vec3 inc_vec = vec3(0.0,0.0,height_increase);
 
-	vec3 inc_vec = vec3(deltaXY,height_increase);
-
-	vec3 final_position = aVertexPosition + inc_vec*0.07;
-
-	gl_Position = uPMatrix * uMVMatrix * vec4(final_position, 1.0);
+	gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition+inc_vec*0.07, 1.0);
 
 	vTextureCoord = aTextureCoord;
 }
