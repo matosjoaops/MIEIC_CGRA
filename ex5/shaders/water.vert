@@ -15,7 +15,7 @@ uniform float normScale;
 
 void main() {
 
-	vec4 color = texture2D(uSampler2,aTextureCoord);
+	vec4 color = texture2D(uSampler2,aTextureCoord+vec2(timeFactor*0.05,0.0));
 
 	float height_increase = color.r;
 

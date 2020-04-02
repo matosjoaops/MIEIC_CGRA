@@ -58,6 +58,9 @@ class ShaderScene extends CGFscene {
 		
 		//this.texture2 = new CGFtexture(this, "textures/FEUP.jpg");
 		this.texture2 = new CGFtexture(this, "textures/waterMap.jpg");
+		this.appearance2 = new CGFappearance(this);
+		this.appearance2.setTexture(this.texture2);
+		this.appearance2.setTextureWrap('REPEAT','REPEAT');
 		
 		// shaders initialization
 
@@ -218,6 +221,9 @@ class ShaderScene extends CGFscene {
 
 		// bind additional texture to texture unit 1
 		this.texture2.bind(1);
+
+		this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_WRAP_S, this.gl.REPEAT);
+        this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_WRAP_T, this.gl.REPEAT);
 
 		if (this.selectedObject==0) {
 			// teapot (scaled and rotated to conform to our axis)
